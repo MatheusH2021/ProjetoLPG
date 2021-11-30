@@ -27,7 +27,17 @@ SECRET_KEY = 'django-insecure-&&hu6ldg878yce4y56d!%9%)-7*hg6gdzgas4be$ydt6j5qk(x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*',
+    'turismo-garanhuns.herokuapp.com',
+    'turismo-garanhuns.herokuapp.com/',
+    'https://turismo-garanhuns.herokuapp.com',
+    'https://turismo-garanhuns.herokuapp.com',
+    'https://turismo-garanhuns.herokuapp.com/',
+    'https://turismo-garanhuns.herokuapp.com/',
+    '127.0.0.1'
+
+]
 
 
 # Application definition
