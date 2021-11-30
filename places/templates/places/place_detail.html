@@ -11,18 +11,19 @@
         </h2>
         <br>
         <span>
-            Adicionado em {{ place.created }}
-        </span>
-        <hr>
-        <br>
-        <span>
             <img src="{% static 'images/location.png' %}" alt="">
             {{ place.address }}
         </span>
+        <br>
+        
         <hr>
-            <p>
-                {{ place.description|linebreaks }}
-            </p>
+        <p>
+            {{ place.description|linebreaks }}
+        </p>
+        <hr>
+        <span>
+            Adicionado em {{ place.created }}
+        </span>   
             
 </article>
 {% endblock %}
