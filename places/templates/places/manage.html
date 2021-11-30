@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Turismo Garanhuns {% endblock %}
+
+{% block content %}
+<div class="container">
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %}class="alert alert-{{message.tags}}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+    <h2 style="text-align: center;">Gerencie suas localidades cadastradas:</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for place in places %}
+            <tr>
+                <th scope="row">{{ place.id }}</th>
+                <td>{{ place.title }}</td>
+                <td>
+                    <a class="btn btn-success"href="/edit/{{place.id}}">Alterar</a>
+                    <a class="btn btn-danger"href="/delete/{{place.id}}">Deletar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+  </table>
+</div>    
+{% endblock %}

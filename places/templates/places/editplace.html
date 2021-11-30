@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Editando {{place.title}} {% endblock %}
+
+{% block content %}
+<div class="container-a">
+    <div class="form">
+        <h2 id="#title">Editando {{place.title}}:</h2>
+        <form autocomplete="off" class="form-control-sm" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <span>*Slug tratasse do "caminho da pagina", para preenchelo utilize o nome da localidade com '-' ao envez de espaço e sem caracteres especiais!</span>
+            <br>
+            <button type="submit" class="btn btn-success">Editar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Turismo Garanhuns {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    {% for place in places %}
+    <div class="row">
+        <hr>
+        <div class="col-3">
+            <img class="imgP" src="{{ place.imagem }}" alt="">
+        </div>
+        <div class="col-9">
+            <h3>
+                <a href="{{ place.get_absolute_urls }}">
+                    {{ place.title }}
+                </a>
+            </h3>
+            <span class="address">
+                <img src="{% static 'images/location.png' %}" alt="">
+                {{ place.address }}
+            </span>
+            <p>
+                {{ place.description|linebreaks|truncatewords:15}}
+            </p>
+        </div>
+        <hr>
+    </div>
+    {% endfor %}
+    <br>
+</div>
+
+{% endblock %}

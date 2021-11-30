@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Turismo Garanhuns {% endblock %}
+
+{% block content %}
+<div class="home">
+    <div class="container">
+        <img src="{% static 'images/natal.jpg   ' %}" alt="Home imagem">
+    </div>
+    <div>
+        <h4 style="padding-top: 15px; text-align: center; color: #BF7315;">Na Turismo Garanhuns nós te ajudamos a aproveitar nossa cidade!</h4>
+        <p style="text-align: center;">
+            Nós visamos em te ajudar a se localizar na nossa cidade, podendo assim aproveitar ao máximo os locais mais
+            famosos que possuíos! <a href="/places">visite nossos pontos turísticos!</a>
+        </p>
+    </div>
+
+</div>
+{% endblock %}

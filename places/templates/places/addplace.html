@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Adicionar Localidade {% endblock %}
+
+{% block content %}
+<div class="container-a">
+        <div class="form">
+            <h2 id="#title">Adicione a nova localidade:</h2>
+            <br>
+            <span>*Para adicionar uma imagem utilize o URL dela, basta ir na imagem que deseja e clicar em "copiar
+                endereço
+                da imagem".*</span>
+            <div>
+                <form autocomplete="off" class="form-control-sm" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <span>*Slug tratasse do "caminho da pagina", ao preencher o campo utilize o nome da localidade com
+                        '-'
+                        ao envez de espaço e sem caracteres especiais!</span>
+                    <br>
+                    <button type="submit" class="btn btn-success" value="Cadastrar Localidade">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+</div>
+{% endblock %}
